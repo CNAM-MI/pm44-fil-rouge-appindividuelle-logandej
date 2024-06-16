@@ -47,8 +47,12 @@ Next Drink est une application mobile développée en MAUI .NET C#. L'objectif d
 - Le vote qui a reçu le plus de voix est sélectionné.
 - L'indicateur de vote permet d'influencer le vote pour rassembler le maximum de personnes pour l'événement.
 
-<img src="src/voteday.jpg" alt="voteday" width="200"/>
-
+<table>
+  <tr>
+    	<img src="src/voteday.jpg" alt="voteday" width="200"/>
+	<img src="src/votehour.jpg" alt="votehour" width="200"/>
+  </tr>
+</table>
 
 ### Technologies utilisées
 
