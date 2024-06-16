@@ -49,8 +49,8 @@ Next Drink est une application mobile développée en MAUI .NET C#. L'objectif d
 
 <table>
   <tr>
-    	<img src="src/voteday.jpg" alt="voteday" width="200"/>
-	<img src="src/votehour.jpg" alt="votehour" width="200"/>
+    <td><img src="src/voteday.jpg" alt="voteday" width="200"/></td>
+ <td><img src="src/votehour.jpg" alt="votehour" width="200"/></td>
   </tr>
 </table>
 
