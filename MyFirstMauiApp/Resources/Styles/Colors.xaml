@@ -18,6 +18,9 @@
     <Color x:Key="Magenta">#D600AA</Color>
     <Color x:Key="MidnightBlue">#190649</Color>
     <Color x:Key="OffBlack">#1f1f1f</Color>
+    <Color x:Key="LightCyan">#47D69D</Color>
+    <Color x:Key="LightBlue">#6FB3CC</Color>
+    <Color x:Key="YellowTotk">#F7D903</Color>
 
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>

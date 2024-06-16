@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstMauiApp.Pages.HomePage"
+             Title="HomePage">
+    <Grid>
+
+        <Image Source="bgtotk.jpg" Aspect="AspectFill" />
+        <ScrollView>
+
+            <StackLayout Padding="20">
+                <Label Text="C'est un peu calme ici" FontSize="24" HorizontalTextAlignment="Center"/>
+                <Button
+                   x:Name="CreateVoteButton"
+                   Text="Créer Vote" 
+                   SemanticProperties.Hint="CreateVoteButtonHint"
+                   Clicked="CreateVote"
+                   HorizontalOptions="Fill"
+                   />
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <x:String x:Key="TitlePopupText">Entrez le titre de votre vote</x:String>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+            </StackLayout>
+
+        </ScrollView>
+    </Grid>
+</ContentPage>

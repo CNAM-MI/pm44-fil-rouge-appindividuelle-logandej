@@ -9,12 +9,17 @@ namespace MyFirstMauiApp
         public MainPage()
         {
             InitializeComponent();
-            ChangeName("Je fais du Java");
+            ChangeName("Louis");
         }
 
         private void ChangeName(string name)
         {
             LabelName.Text = name;
+        }
+
+        private void UpdateName(object sender, EventArgs e)
+        {
+            ChangeName(LoginName.Text);
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstMauiApp.Pages.VoteDay"
+             xmlns:local="clr-namespace:MyFirstMauiApp.Pages"
+             xmlns:views="clr-namespace:MyFirstMauiApp.Views"
+             Title="VoteDay">
+    <VerticalStackLayout>
+        <Label 
+            Text="Votez le jour !"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <ContentView x:Name="selectDataView" />
+        <StackLayout VerticalOptions="Center" x:Name="VoteSondageLayout" IsVisible="true">
+            <Label Text="Voter le jour" HorizontalOptions="Center" Margin="5"/>
+            <Button Text="Voter" Clicked="OnVoteButtonClicked" HorizontalOptions="CenterAndExpand"  VerticalOptions="End" Padding="40,30,40,30" FontSize="Large"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

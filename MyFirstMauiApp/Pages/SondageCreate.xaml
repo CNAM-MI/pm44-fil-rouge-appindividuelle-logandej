@@ -1,0 +1,73 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstMauiApp.Pages.SondageCreate"
+             xmlns:local="clr-namespace:MyFirstMauiApp.Pages"
+             Title="SondageCreate">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StepToColorConverter x:Key="StepToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    <StackLayout>
+        <Button Text="Annuler" Clicked="OnCancelButtonClicked" HorizontalOptions="Center" />
+        <Label Text="Création du Sondage" x:Name="TitleText"  FontSize="Title" HorizontalTextAlignment="Center" />
+
+
+        <!-- Étape 1 -->
+        <StackLayout x:Name="step1Layout" IsVisible="true">
+            <!-- Contenu de l'étape 1 -->
+            <Label Text="Temps pour voter le jour" FontSize="Title" HorizontalTextAlignment="Center" />
+
+            <Image Source="dateicon.jpg" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" />
+
+            <Grid ColumnDefinitions="Auto, *, Auto">
+                <Button Text="-" x:Name="minusButton1" Grid.Column="0" />
+                <Entry x:Name="timeEntry1" Text="15 min" Grid.Column="1" HorizontalTextAlignment="Center" IsEnabled="False" />
+                <Button Text="+" x:Name="plusButton1" Grid.Column="2" />
+            </Grid>
+
+        </StackLayout>
+
+        <!-- Étape 2 -->
+        <StackLayout x:Name="step2Layout" IsVisible="false">
+            <!-- Contenu de l'étape 2 -->
+            <Label Text="Temps pour voter l'heure" FontSize="Title" HorizontalTextAlignment="Center" />
+
+            <Image Source="houricon.png" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" />
+
+            <Grid ColumnDefinitions="Auto, *, Auto">
+                <Button Text="-" x:Name="minusButton2" Grid.Column="0"  />
+                <Entry x:Name="timeEntry2" Text="15 min" Grid.Column="1" HorizontalTextAlignment="Center" IsEnabled="False" />
+                <Button Text="+" x:Name="plusButton2" Grid.Column="2" />
+            </Grid>
+            <!-- ... -->
+        </StackLayout>
+
+        <!-- Étape 3 -->
+        <StackLayout x:Name="step3Layout" IsVisible="false">
+            <!-- Contenu de l'étape 3 -->
+            <Label  Text="Vous êtes sur le point de créer un nouveau sondage" />
+            <Label  Text="Récapitulatif" />
+            <Label  Text="Titre" />
+            <Label x:Name="TitleSondageReminder" Text="" />
+            <Label  Text="Temps pour voter le jour" />
+            <Label x:Name="TimeDayReminder" Text="" /> 
+            <Label  Text="Temps pour voter l'heure" />
+            <Label x:Name="TimeHourReminder" Text="" />
+
+
+            <Button Text="Save" Clicked="OnSaveButtonClicked" />
+            <!-- ... -->
+        </StackLayout>
+
+
+        <!-- Boutons de navigation -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Précédent" Clicked="OnPreviousClicked" x:Name="previousButton" />
+            <Button Text="Suivant" Clicked="OnNextClicked" x:Name="nextButton" />
+        </StackLayout>
+        
+        
+        
+    </StackLayout>
+</ContentPage>

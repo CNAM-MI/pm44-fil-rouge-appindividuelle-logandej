@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+              xmlns:local="clr-namespace:MyFirstMauiApp.Views"
+              xmlns:data="clr-namespace:MyFirstMauiApp.Datas"
+             x:Class="MyFirstMauiApp.Views.SelectDataView">
+    <VerticalStackLayout>
+        <AbsoluteLayout>
+            <!-- Votre contenu ici -->
+            <!-- Élément positionné en haut à gauche avec une taille de 100x100 -->
+            <Image x:Name="arrow"  Source="arrow.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFill"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,100,100"
+        AbsoluteLayout.LayoutFlags="PositionProportional"
+                    ZIndex="10"
+        />
+
+        </AbsoluteLayout>
+        <chart:SfCircularChart>
+            <chart:SfCircularChart.Resources>
+                <DataTemplate x:Key="labelTemplate">
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="{Binding Item.Item}" TextColor="Black" FontSize="13"/>
+                        <Label Text=" p " TextColor="Black" FontSize="13" ZIndex="1"/>
+                        <Label Text="{Binding Value}" TextColor="Black" FontSize="13"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </chart:SfCircularChart.Resources>
+
+            <chart:PieSeries 
+                StartAngle="180" 
+                x:Name="pieSeries"
+                EndAngle="360"
+                ItemsSource="{Binding Items}" 
+                ExplodeOnTouch="False" 
+                ExplodeRadius="30" 
+                ExplodeIndex="6"
+                Radius="1"
+                LabelTemplate="{StaticResource labelTemplate}"
+                PaletteBrushes="{Binding CustomBrushes}"
+                XBindingPath="Item"
+                YBindingPath="Value" 
+                /> 
+            <chart:SfCircularChart.BindingContext>
+                <data:DataViewItem x:Name="DataViewItemChart"></data:DataViewItem>
+            </chart:SfCircularChart.BindingContext>
+        </chart:SfCircularChart>
+
+        <Label x:Name="SelectedData"  Text="?"/>
+
+    </VerticalStackLayout>
+</ContentView>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             x:Class="MyFirstMauiApp.Pages.TestGyroscope"
+             xmlns:local="clr-namespace:MyFirstMauiApp.Pages"
+             xmlns:data="clr-namespace:MyFirstMauiApp.Datas"
+             Title="TestGyroscope"
+          >
+   
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Angle = " x:Name="angleText" FontSize="Title" HorizontalTextAlignment="Center" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--<Label x:Name="angleLabel" Text="0" HorizontalTextAlignment="Center" />-->
+
+            <Grid Grid.Row="1">
+                <BoxView x:Name="bar" BackgroundColor="Gray" HeightRequest="20" />
+                <Label x:Name="dot" Text="●" FontSize="20" BackgroundColor="White" HorizontalOptions="Start" />
+            </Grid>
+        </Grid>
+
+
+
+        <AbsoluteLayout>
+            <!-- Votre contenu ici -->
+
+            <!-- Élément positionné en haut à gauche avec une taille de 100x100 -->
+            <Image x:Name="arrow"  Source="arrow.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFill"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,100,100"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+                       ZIndex="10"
+                  />
+
+        </AbsoluteLayout>
+
+
+        <Grid Background="Aqua">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Label pour afficher l'angle -->
+            <Label x:Name="angleLabel" Text="0.00" Grid.Row="0" HorizontalOptions="Center" />
+
+          
+        </Grid>
+
+        <chart:SfCircularChart>
+            <chart:SfCircularChart.Resources>
+                <DataTemplate x:Key="labelTemplate">
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="{Binding DayOfWeek}" TextColor="Black" FontSize="13"/>
+                        <Label Text=" : " TextColor="Black" FontSize="13" ZIndex="1"/>
+                        <Label Text="{Binding Value}" TextColor="Black" FontSize="13"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </chart:SfCircularChart.Resources>
+
+            <chart:PieSeries 
+                StartAngle="180" 
+                x:Name="pieSeries"
+                EndAngle="360"
+                ItemsSource="{Binding Items}" 
+                ExplodeOnTouch="False" 
+                ExplodeRadius="30" 
+                ExplodeIndex="6"
+                Radius="1"
+                LabelTemplate="{StaticResource labelTemplate}"
+                XBindingPath="DayOfWeek"
+                YBindingPath="Value" /> 
+            <chart:SfCircularChart.BindingContext>
+                <data:DataViewItem x:Name="DataViewItemChart"></data:DataViewItem>
+            </chart:SfCircularChart.BindingContext>
+        </chart:SfCircularChart>
+
+        <Button Text="Day : " x:Name="SelectedDay"></Button>
+        
+    </VerticalStackLayout>
+</ContentPage>
