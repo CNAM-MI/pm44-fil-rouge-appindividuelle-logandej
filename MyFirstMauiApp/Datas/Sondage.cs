@@ -18,42 +18,5 @@ namespace MyFirstMauiApp.Datas
             TimerDay = timerDay;
             TimerHour = timerHour;
         }
-
-        //public Frame DiplaySondage()
-        //{
-        //    Label titleLabel = new Label
-        //    {
-        //        Text = TitleSondage,
-        //        HorizontalOptions = LayoutOptions.Center
-        //    };
-
-        //    Label timerDayLabel = new Label
-        //    {
-        //        Text = TimerDay.ToString(),
-        //        HorizontalOptions = LayoutOptions.Center
-        //    };
-        //    Label timerHourLabel = new Label
-        //    {
-        //        Text = TimerHour.ToString(),
-        //        HorizontalOptions = LayoutOptions.Center
-        //    };
-
-        //    StackLayout stackLayout = new StackLayout
-        //    {
-        //        Children = { titleLabel, timerDayLabel, timerHourLabel },
-        //        VerticalOptions = LayoutOptions.CenterAndExpand,
-        //        HorizontalOptions = LayoutOptions.CenterAndExpand
-        //    };
-
-        //    Frame frame = new Frame
-        //    {
-        //        Content = stackLayout,
-        //        Padding = new Thickness(20),
-
-        //        CornerRadius = 10
-        //    };
-
-        //    return frame;
-        //}
     }
 }
