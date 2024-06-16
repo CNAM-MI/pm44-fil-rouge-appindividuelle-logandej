@@ -19,8 +19,13 @@ Next Drink est une application mobile développée en MAUI .NET C#. L'objectif d
 | 2h   | 1h |   
 | 5h   | 2h |   
 
-<img src="src/createVote.png" alt="createVote" width="200"/>
-<img src="src/timerDay.png" alt="timerDay" width="200"/>
+<table>
+  <tr>
+    <td><img src="src/createVote.png" alt="createVote" width="200"></td>
+    <td><img src="src/timerDay.png" alt="timerDay" width="200"></td>
+    <td><img src="src/timerHour.png" alt="timerHour" width="200"></td>
+  </tr>
+</table>
 
 
 ### Vote
@@ -91,7 +96,7 @@ Next Drink est une application mobile développée en MAUI .NET C#. L'objectif d
 
 ### Base de données
 
-<img src="src/bdd.png" alt="bdd" width="200"/>
+<img src="src/bdd.png" alt="bdd" width="400"/>
 
 
 ### Connexion au serveur en Socket.io
@@ -123,3 +128,4 @@ Next Drink est une application mobile développée en MAUI .NET C#. L'objectif d
      Console.WriteLine("Connection failed"+ex.Message);
  }
 ```
+
