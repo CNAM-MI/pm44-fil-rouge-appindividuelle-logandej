@@ -1,5 +1,0 @@
-﻿README TEST
-
-#ProjectTitle
-
-TitleTest
